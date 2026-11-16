@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f6f1e7">
-<title>居家復能計畫與練習紀錄</title>
-<meta name="description" content="居家復能用：治療師評估與開立計畫，家屬、居家服務員用手機每天陪練勾選，紀錄可用 LINE 傳回。">
+<title>居家復能目標與服務紀錄</title>
+<meta name="description" content="CA07 居家復能治療師用：依衛福部操作指引寫好 5 大要素訓練目標，每次訪視的照管系統欄位一鍵複製，圖文居家指導用 LINE 傳給案家並回填次數。資料只存在本機。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%236b8f71%22/%3E%3Cg%20transform%3D%22translate%284%204%29%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.1%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%229.5%22%20cy%3D%224.2%22%20r%3D%222.1%22/%3E%3Cpath%20d%3D%22M9.2%207.4L8.3%2013M8.3%2013l-1.7%204-1.2%204M8.3%2013l2.4%203.4.5%204.6M9%208.9l3.2%202.6M12.2%2011.2l.9%209.8M15.5%2017.5l5-7M17.6%2010.3h2.9v2.9%22/%3E%3C/g%3E%3C/svg%3E">
 <style>
 /*STYLES*/
@@ -38,7 +38,7 @@ window.REPORT_CONTEXT=()=>{
   let tech=''; try{
     const page=(location.hash||'#/').replace(/\/[a-z0-9_]{6,}/gi,'/…').split('?')[0];
     const n=c=>Store.all(c).length;
-    tech=`頁面 ${page}；${Store.DB.meta.orgType||''}；畫面 ${innerWidth}×${innerHeight}；${navigator.userAgent.slice(0,120)}；個案 ${n('clients')}／計畫 ${n('plans')}／團體 ${n('groups')}${window.__errs.length?'；最近錯誤：'+window.__errs.join(' | '):''}`;
+    tech=`頁面 ${page}；${Store.DB.meta.orgType||''}；畫面 ${innerWidth}×${innerHeight}；${navigator.userAgent.slice(0,120)}；個案 ${n('clients')}／期程 ${n('episodes')}／訪視 ${n('visits')}${window.__errs.length?'；最近錯誤：'+window.__errs.join(' | '):''}`;
   }catch(e){}
   return {item:(document.querySelector('#top-title b')||{}).textContent||'', itemName:tech.slice(0,600)};
 };
@@ -55,6 +55,6 @@ window.addEventListener('load',()=>{
   const fab=host.shadowRoot.querySelector('.fab'); if(fab){fab.title='回報錯誤或建議';fab.setAttribute('aria-label','回報錯誤或建議');}
 });
 </script>
-<script src="https://mattsue1003.github.io/oth-report-button/report.js" data-site="居家復能計畫與練習紀錄" data-color="#6b8f71" data-label="錯誤／建議" data-offset="16" defer></script>
+<script src="https://mattsue1003.github.io/oth-report-button/report.js" data-site="居家復能目標與服務紀錄" data-color="#6b8f71" data-label="錯誤／建議" data-offset="16" defer></script>
 </body>
 </html>

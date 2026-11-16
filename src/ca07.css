@@ -1,0 +1,87 @@
+
+/* ================= CA07 居家復能（新版） ================= */
+.saved{font-size:13px;color:var(--ok);opacity:0;transition:opacity .3s}.saved.on{opacity:1}
+.todo .dot.red{background:var(--err)}.todo .dot.amber{background:var(--warn)}
+.todo .tt small{color:var(--muted)}
+.mini-bar.wide{width:100%;max-width:260px;display:block;margin:6px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.chip-b{border:1px dashed var(--line);background:var(--surface);color:var(--pri-d);border-radius:999px;padding:3px 10px;font:inherit;font-size:13px;cursor:pointer;line-height:1.5;text-align:left}
+.chip-b:hover{border-style:solid;border-color:var(--pri);background:var(--pri-l)}
+.pills.wrap{gap:6px 6px}
+.btn-row.end{justify-content:flex-end}
+.case-head{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;margin-bottom:10px}
+.case-head small{display:block;color:var(--muted);font-size:14px;margin-top:2px}.case-head .btn-row{margin:0}
+.tips{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.tip{display:flex;gap:8px;align-items:center;text-decoration:none;color:var(--text);padding:8px 12px;border-radius:10px;font-size:14.5px}
+.tip.amber{background:var(--warn-l)}.tip.red{background:var(--err-l)}.tip:hover{filter:brightness(.97)}
+.tip.red .ic{color:var(--err)}.tip.amber .ic{color:var(--warn)}
+.notice-card{background:var(--pri-l);border-color:transparent;font-size:15px}.notice-card b{color:var(--pri-d)}
+.ok-card{background:var(--ok-l);border-color:transparent}
+.rules summary{list-style:none;cursor:pointer}.rules summary::-webkit-details-marker{display:none}.rules summary h2::after{content:'＋';float:right;color:var(--muted)}.rules[open] summary h2::after{content:'－'}
+.rule-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.rule-grid div{background:var(--surface2);border-radius:12px;padding:12px 14px}
+.rule-grid b{color:var(--pri-d)}.rule-grid p{margin:4px 0 0;font-size:14.5px}
+.src li{margin:6px 0;font-size:14.5px}
+details.card > summary{cursor:pointer}details.card > summary h2{display:inline}
+/* 目標卡 */
+.goal-c{border-left:5px solid var(--pri)}
+.gc-top{display:flex;align-items:center;gap:6px;margin-bottom:6px}.gc-top h2{margin:0;display:flex;gap:10px;align-items:center}
+.gnum{background:var(--pri);color:#fff;border-radius:8px;padding:2px 10px;font-size:14px}
+.goal-c .goal-preview{display:block;font-size:16px;margin:12px 0 6px}
+.gp-t{font-weight:600;color:var(--text);line-height:1.6}
+.gp-is{margin:6px 0 0;padding-left:20px;color:var(--warn);font-size:14px}.gp-ok{color:var(--ok);font-size:14px;margin-top:4px}
+.hint.ex{background:var(--surface2);border-radius:8px;padding:6px 10px}
+/* 訪視紀錄 */
+.visit-layout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:16px;align-items:start}
+.visit-side{position:sticky;top:70px}
+.sys h2{margin-bottom:6px}
+.sysf{padding:10px 0;border-top:1px dashed var(--line)}.sysf:first-child{border-top:0;padding-top:0}
+.sysf-h{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:4px}
+.sysbox{white-space:pre-wrap;word-break:break-word;font:inherit;font-size:14px;background:var(--surface2);border-radius:8px;padding:8px 10px;margin:0;max-height:220px;overflow:auto}
+.copy-row{display:flex;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap}
+.btn.copy{background:var(--pri-l);border-color:transparent;color:var(--pri-d);font-weight:600}
+.row2{display:flex;align-items:center;gap:6px}.row2 .inp{flex:1}
+.vg{padding:10px 0;border-top:1px dashed var(--line)}.vg:first-of-type{border-top:0}
+.vg-h b{display:block}.vg-h small{color:var(--muted);display:block;margin-bottom:6px}
+.vg .inp{margin-top:6px}
+.ach-pills .pill input:checked+span{background:var(--pri)}
+.ach{display:inline-block;font-size:12.5px;padding:1px 8px;border-radius:999px;background:var(--surface2);white-space:nowrap}
+.ach.ok{background:var(--ok-l);color:var(--ok)}.ach.mid{background:var(--warn-l);color:var(--warn)}.ach.no{background:var(--err-l);color:var(--err)}
+.tbl td.c,.tbl th.c{text-align:center}
+.tabs.t6 a{padding:10px 12px}
+/* 居家指導 */
+.gd{display:grid;grid-template-columns:140px 1fr;gap:14px;padding:14px 0;border-top:1px solid var(--line)}.gd:first-of-type{border-top:0}
+.gd-img img{width:140px;aspect-ratio:16/10;object-fit:cover;border-radius:10px}.gd-img .noimg-l{width:140px;aspect-ratio:16/10;display:grid;place-items:center;background:var(--surface2);border-radius:10px;color:var(--muted)}
+.gd-h{display:flex;align-items:center;gap:6px;margin-bottom:6px}.gd-h b{font-size:17px}
+.sug-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.sug{flex:none;width:130px;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:6px;cursor:pointer;font:inherit;font-size:13px;text-align:left;display:flex;flex-direction:column;gap:4px}
+.sug img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:8px}.sug:hover{border-color:var(--pri)}
+/* 案家頁 */
+.sh-msg{background:var(--warn-l);border-radius:14px;padding:12px 16px;font-size:17px}
+.sh-goal summary{cursor:pointer}
+.sh-it2{display:grid;grid-template-columns:110px 1fr;grid-template-areas:"img tx" "cnt cnt";gap:10px 12px;background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:12px}
+.sh-it2>img{grid-area:img;width:110px;aspect-ratio:16/10;object-fit:cover;border-radius:10px}
+.sh-it2 .sh-tx{grid-area:tx}.sh-it2:not(:has(img)) .sh-tx{grid-column:1/-1}
+.sh-it2.s-ok{border-color:var(--ok);background:var(--ok-l)}
+.sh-cnt{grid-area:cnt;display:grid;grid-template-columns:64px 1fr 1.6fr;gap:8px;align-items:center}
+.sh-cnt button{height:54px;border-radius:14px;border:2px solid var(--line);background:var(--surface);font:inherit;font-size:22px;font-weight:700;cursor:pointer;color:var(--text)}
+.sh-cnt button.plus{background:var(--pri);border-color:var(--pri);color:#fff}.sh-cnt button:disabled{opacity:.4}
+.sh-cnt span{text-align:center}.sh-cnt span b{font-size:28px;color:var(--pri-d)}.sh-cnt span small{margin-left:3px;color:var(--muted)}
+.sh-tx details summary{font-size:14px;color:var(--pri-d);cursor:pointer}
+@media (max-width:1100px){.visit-layout{grid-template-columns:1fr}.visit-side{position:static}.rule-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){
+  .tabs.t6{grid-template-columns:repeat(3,1fr)}.tabs.t6 a{font-size:14px;padding:9px 2px}
+  .rule-grid{grid-template-columns:1fr}
+  .gd{grid-template-columns:1fr}.gd-img img,.gd-img .noimg-l{width:100%}
+  .case-head{padding:10px 12px}
+  .gc-top h2{font-size:17px}
+}
+.flow5{flex-wrap:wrap;row-gap:10px}
+.pill,.chk{position:relative}
+.goal-c .pills.cats{flex-wrap:wrap!important;overflow:visible!important}
+.sys-jump{display:none}
+@media (max-width:1100px){.sys-jump{display:inline-flex;position:fixed;right:14px;bottom:84px;z-index:30;box-shadow:0 4px 14px rgba(0,0,0,.18);border-radius:999px}}
+@media (min-width:761px) and (max-width:1100px){.sys-jump{bottom:20px}}
+@media print{.d-t.kv1 th{width:24%;white-space:normal}}
+.d-t.kv1 th{width:24%;white-space:normal}
+@media print{html,body{background:#fff!important}}
+.todo .tt .dot{display:inline-block;margin-right:6px;vertical-align:middle}

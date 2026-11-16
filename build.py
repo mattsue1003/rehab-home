@@ -2,9 +2,9 @@
 import pathlib
 d = pathlib.Path(__file__).parent
 src = d / 'src'
-JS = ['domain.js', 'library-data.js', 'store.js', 'core.js', 'folder.js', 'docgen.js', 'docs.js', 'reports.js', 'home.js', 'app.js', 'pages-indiv.js', 'pages-lib.js', 'demo.js']
+JS = ['domain.js', 'library-data.js', 'store.js', 'core.js', 'folder.js', 'docgen.js', 'ca07-rules.js', 'ca07-docs.js', 'ca07-share.js', 'app.js', 'ca07-pages.js', 'pages-lib.js', 'ca07-demo.js']
 html = (src / 'index.html').read_text(encoding='utf-8')
-out = (html.replace('/*STYLES*/', (src / 'styles.css').read_text(encoding='utf-8'))
+out = (html.replace('/*STYLES*/', (src / 'styles.css').read_text(encoding='utf-8') + (src / 'ca07.css').read_text(encoding='utf-8'))
            .replace('/*VENDOR*/', (src / 'vendor' / 'pptxgen.bundle.js').read_text(encoding='utf-8'))
            .replace('/*SCRIPTS*/', '\n'.join(f'/* ---- {f} ---- */\n' + (src / f).read_text(encoding='utf-8') for f in JS)))
 import json

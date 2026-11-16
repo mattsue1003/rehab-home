@@ -44,7 +44,7 @@ function docToHTML(doc){
   for (const b of doc.blocks) {
     if (b.t === 'h') out.push(`<h4>${esc(b.text)}</h4>`);
     else if (b.t === 'p') out.push(`<p class="${b.small ? 'd-small' : ''}">${cell(b.text)}</p>`);
-    else if (b.t === 'kv') { const n = b.cols || 2, rows = []; for (let i = 0; i < b.rows.length; i += n) rows.push(b.rows.slice(i, i + n)); out.push(`<table class="d-t kv"><tbody>${rows.map(r => `<tr>${r.map(([k, v]) => `<th>${esc(k)}</th><td>${cell(v)}</td>`).join('')}${'<th></th><td></td>'.repeat(n - r.length)}</tr>`).join('')}</tbody></table>`); }
+    else if (b.t === 'kv') { const n = b.cols || 2, rows = []; for (let i = 0; i < b.rows.length; i += n) rows.push(b.rows.slice(i, i + n)); out.push(`<table class="d-t kv${n === 1 ? ' kv1' : ''}"><tbody>${rows.map(r => `<tr>${r.map(([k, v]) => `<th>${esc(k)}</th><td>${cell(v)}</td>`).join('')}${'<th></th><td></td>'.repeat(n - r.length)}</tr>`).join('')}</tbody></table>`); }
     else if (b.t === 'table') {
       const ws = b.widths || b.head.map(() => 1), tot = ws.reduce((s, x) => s + x, 0);
       out.push(`<table class="d-t" style="${b.fs ? `font-size:${b.fs}pt` : ''}"><colgroup>${ws.map(w => `<col style="width:${(w / tot * 100).toFixed(2)}%">`).join('')}</colgroup><thead><tr>${b.head.map(h => `<th>${cell(h)}</th>`).join('')}</tr></thead><tbody>${b.rows.map(r => `<tr style="${b.rowH ? `height:${b.rowH}mm` : ''}">${r.map((v, i) => `<td class="${(b.center || []).includes(i) ? 'c' : ''}">${cell(v)}</td>`).join('')}</tr>`).join('')}</tbody></table>`);
