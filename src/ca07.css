@@ -85,3 +85,13 @@ details.card > summary{cursor:pointer}details.card > summary h2{display:inline}
 .d-t.kv1 th{width:24%;white-space:normal}
 @media print{html,body{background:#fff!important}}
 .todo .tt .dot{display:inline-block;margin-right:6px;vertical-align:middle}
+/* 語音輸入 */
+.mic-row{display:flex;align-items:center;gap:8px;margin-top:4px;min-height:0}
+.mic{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);background:var(--surface);color:var(--pri-d);border-radius:999px;padding:3px 10px;font:inherit;font-size:13px;cursor:pointer;line-height:1.5}
+.mic:hover{border-color:var(--pri);background:var(--pri-l)}
+.mic.on{background:var(--err);border-color:var(--err);color:#fff;animation:micp 1.4s ease-in-out infinite}
+@keyframes micp{0%,100%{box-shadow:0 0 0 0 rgba(180,83,63,.45)}50%{box-shadow:0 0 0 6px rgba(180,83,63,0)}}
+.mic-live{font-size:13px;color:var(--muted);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mic-tip{background:var(--surface2);border-radius:8px;padding:6px 10px}
+@media (max-width:760px){.mic{padding:6px 12px;font-size:14px}}
+@media print{.mic-row{display:none}}

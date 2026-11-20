@@ -251,7 +251,7 @@ function pageVisitEdit(id, epId){
   const follow = [prev?.content?.next ? '上次建議：' + prev.content.next : '', rets.text].filter(Boolean);
   return `<div class="toolbar"><a class="btn" href="#/case/${c.id}/visits">${icon('back', 16)}${esc(c.name)}</a><span class="sp"></span>${savedTag()}${exportBar('visit1', () => visitDoc(S.ep, Store.get('visits', S.edit.id) || S.edit, n), ['pdf', 'word'])}</div>
   <div class="visit-layout"><div class="visit-main">
-  <section class="card"><h2>第 ${n} 次｜${visitLabel(n)}</h2>${n === 1 ? `<p class="notice">${icon('alert', 16)} 第一次訪視：完成評估，並與個案及照顧者確認<b>服務內容、訓練目標與結案條件</b>（操作指引要求第一次訪視時說明）。</p>` : ''}
+  <section class="card"><h2>第 ${n} 次｜${visitLabel(n)}</h2>${voiceTipHTML()}${n === 1 ? `<p class="notice">${icon('alert', 16)} 第一次訪視：完成評估，並與個案及照顧者確認<b>服務內容、訓練目標與結案條件</b>（操作指引要求第一次訪視時說明）。</p>` : ''}
     <div class="form-grid">${F.field('服務日期', F.date('date'))}${F.field('起訖時間', `<div class="row2">${F.input('start', { type:'time' })}<span>–</span>${F.input('end', { type:'time' })}</div>`, { hint:'每次服務約 50–60 分鐘' })}
     ${F.field('指導對象（可複選）', `<div class="pills wrap">${WHO.map(w => F.checkArr('who', w, w)).join('')}</div><div id="who-other" ${(v.who || []).includes('其他') ? '' : 'hidden'}>${F.input('whoOther', { ph:'其他：請說明' })}</div>`, { cls:'span2' })}
     ${F.field('接受指導的照顧者姓名', F.input('carerName', { ph:'固定同一人（組）' }), { hint:prev && prev.carerName && v.carerName && prev.carerName !== v.carerName ? '⚠ 與上次不同，學習之照顧者應固定' : '' })}</div></section>

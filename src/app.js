@@ -95,6 +95,7 @@ function pageSettings(){
     <div class="field span2"><label class="lbl">單位名稱（選填）</label><input class="inp" value="${esc(m.orgName || '')}" onchange="Store.setMeta('orgName',this.value.trim());renderShell();toast('已更新')"></div></div></section>
   <section class="card"><h2>照管系統選項</h2><div class="field"><label class="lbl">「復能目標達成情形」下拉選單的選項（用頓號分隔，由好到差）</label><input class="inp" value="${esc(ACHIEVE().join('、'))}" onchange="Store.setMeta('achieveOpts',this.value.split(/[、,，]/).map(x=>x.trim()).filter(Boolean));toast('已更新')"><p class="hint">預設為「達成、部分達成、未達成」。如果您所在縣市的系統選項不同，可在這裡改成一樣的文字。</p></div>
     <div class="field"><label class="lbl">表單簽名欄</label>${signPrefHTML()}</div></section>
+  <section class="card"><h2>語音輸入</h2>${voiceSettingsHTML()}</section>
   <section class="card"><h2>📁 儲存資料夾</h2>${folderCardHTML(false)}</section>
   <section class="card"><h2>資料備份與還原</h2>
     <p>資料只存在<b>這台裝置的這個瀏覽器</b>。請定期匯出備份到隨身碟或雲端硬碟。${m.lastBackup ? `<br>上次備份：${rocDate(m.lastBackup)}` : '<br>' + badge('尚未備份', 'red')}</p>
